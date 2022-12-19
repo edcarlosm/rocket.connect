@@ -172,17 +172,17 @@ services:
     ports:
       - 27017:27017
 
-  webdav:
-    image: bytemark/webdav
-    volumes:
-      - /tmp/web:/var/lib/dav
-    environment:
-      - AUTH_TYPE=Basic
-      - USERNAME=alice
-      - PASSWORD=secret1234
-      - LOCATION=/webdav
-    ports:
-      - 8011:80
+ # webdav:
+ #   image: bytemark/webdav
+ #   volumes:
+ #     - /tmp/web:/var/lib/dav
+ #   environment:
+#      - AUTH_TYPE=Basic
+#      - USERNAME=alice
+#      - PASSWORD=secret1234
+#      - LOCATION=/webdav
+#    ports:
+#      - 8011:80
 
 
   # browser:
@@ -243,13 +243,13 @@ services:
   #   ports:
   #     - "21465:21465"
 
-  apache:
-    image: 'php:apache'
-    ports:
-      - "88:80"
-    volumes:
-      - ./compose/local/apache/site:/var/www/html
-      - ./compose/local/apache/confs/additional.conf:/etc/apache2/conf-enabled/additional.conf
+#  apache:
+#    image: 'php:apache'
+#    ports:
+#      - "88:80"
+#    volumes:
+#      - ./compose/local/apache/site:/var/www/html
+#      - ./compose/local/apache/confs/additional.conf:/etc/apache2/conf-enabled/additional.conf
   
   nginx-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
